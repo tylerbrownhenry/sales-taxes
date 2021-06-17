@@ -1,50 +1,67 @@
 import Product from '../types/Product';
-export const processCart = (cartList: Product[], newItem : Product) => {
+export const processCart = (cartList: any[], newItem: any, removing: boolean) => {
     let existInCart = false;
 
     let resp = {
-        total: 0,
+        // total: 0,
         totalAfterTax: 0,
         totalTax: 0,
-        // productCount: 0,
-        // tax: 0
     }
-    
+
     const newList = cartList.reduce((accumulator, product, i) => {
-        const { id, quantity, price, taxedPrice, tax } = product;
+        let { id, quantity, price, taxedPrice, tax } = product;
         product.idx = i;
+        let noneInCart = false;
         if(id === newItem.id){
-            existInCart = true;
-            quantity++;
-            product.quantity = quantity;
+            if(!removing){
+                existInCart = true;
+                quantity++;
+                product.quantity = quantity;
+            } else {
+                existInCart = true;
+                quantity--;
+                product.quantity = quantity;
+                if(quantity === 0){
+                    noneInCart = true;
+                }
+            }
+
         }
-        resp.total += price * quantity,
-        resp.totalAfterTax += taxedPrice * quantity,
-        resp.totalTax += tax * quantity,
-        accumulator.push(product);
+
+        if(!noneInCart){
+            // resp.total += price * quantity,
+            resp.totalAfterTax += taxedPrice * quantity,
+            resp.totalTax += tax * quantity,
+            accumulator.push(product);
+        }
+        return accumulator;
     }, []);
 
-    if(!existInCart){
+    if(!existInCart && !removing){
+        console.log('NOPE');
         let { quantity, price, taxedPrice, tax } = newItem;
-        quantity += 1;
+        quantity = 1;
         newItem.quantity = quantity;
         newItem.idx = cartList.length + 1;
         newList.push(newItem);
-        resp.total += price * quantity;
+        // resp.total += price * quantity;
         resp.totalAfterTax += taxedPrice * quantity;
         resp.totalTax += tax * quantity;
     }
 
-    return { resp, newList };
+    let response = {
+        totalTax: resp.totalTax.toFixed(2),
+        totalAfterTax: resp.totalAfterTax.toFixed(2)
+    }
+
+    return {response, newList };
 
 }
 
-export const addtoCart = (cartList, item) => processCart(cartList, item);
+export const addtoCart = (cartList: Product[], item: Product) => processCart(cartList, item, false);
 
 export const removeFromCart = (cartList: Product[], item : Product) => {
-    cartList.splice(item.idx, 1);
-    return processCart(cartList)
+    return processCart(cartList, item, true)
 }
-
 
 export default addtoCart;

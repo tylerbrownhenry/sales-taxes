@@ -4,7 +4,10 @@ export default interface Product {
 	price: number,
     quantity: number,
     idx: number,
+    id: string,
 	type: string,
     taxedPrice: number,
     tax: number,
+    taxRate: number,
+    taxExempt: boolean,
 }

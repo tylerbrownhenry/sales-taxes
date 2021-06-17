@@ -12,6 +12,33 @@ $theme-colors: (
     font-size: 24px;
 }
 
+.multiItemPrice, .totalPrice, .removeButton{
+    color: #fff;
+}
+@media (min-width: 992px) { 
+    .col-12.floatRight{
+        position: fixed;
+        right: 0;
+        height: 100%;
+        top: 80px;
+        .list-group{
+            max-height: 50%;
+            overflow: scroll;
+        }
+    }
+ }
+
+.removeButton {
+    cursor: pointer;
+}
+
+.cart-list li{
+    list-style-type: none;
+    label {
+        font-weight: bold;
+    }
+}
+
 .product-name {
     min-height:50px;
 }
