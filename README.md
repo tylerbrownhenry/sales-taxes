@@ -7,7 +7,6 @@ Tax is also rounded up to the nearest 5 cents, then added to the product's price
 
 This has only been ran on a 2021 Macbook Air.
 
-
 ## Project setup
 
 ```shell

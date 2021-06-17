@@ -1,47 +1,49 @@
 $theme-colors: (
-    'primary': #0091ea //Covalence Blue!  :D
+  "primary": #0091ea //Covalence Blue!  :D,
 );
 
 .card {
-    min-width: 25% !important; ///yesss
+  min-width: 25% !important; ///yesss
 }
 
 .price {
-    font-weight: 600;
-    color: #333333;
-    font-size: 24px;
+  font-weight: 600;
+  color: #333333;
+  font-size: 24px;
 }
 
-.multiItemPrice, .totalPrice, .removeButton {
-    color: #fff;
+.multiItemPrice,
+.totalPrice,
+.removeButton {
+  color: #fff;
 }
 
-@media (min-width: 992px) { 
-    .col-12.floatRight{
-        position: fixed;
-        right: 0;
-        height: 100%;
-        top: 80px;
-        .list-group{
-            max-height: 50%;
-            overflow: scroll;
-        }
+@media (min-width: 992px) {
+  .col-12.floatRight {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    top: 80px;
+    .list-group {
+      max-height: 50%;
+      overflow: scroll;
     }
- }
+  }
+}
 
 .removeButton {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .cart-list li {
-    list-style-type: none;
-    label {
-        font-weight: bold;
-    }
+  list-style-type: none;
+  label {
+    font-weight: bold;
+  }
 }
 
 .product-name {
-    min-height:50px;
+  min-height: 50px;
 }
 
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

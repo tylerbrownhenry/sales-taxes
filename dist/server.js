@@ -16,7 +16,7 @@
   \******************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar router = express.Router();\nrouter.get('/api/getCartTotal', function (req, res, next) {\n    console.log('For timing\\'s sake decided against doing this as an api');\n    res.json('receipt');\n});\nexports.default = router;\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/routes.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar router = express.Router();\nrouter.get(\"/api/getCartTotal\", function (req, res, next) {\n    console.log(\"For timing's sake decided against doing this as an api\");\n    res.json(\"receipt\");\n});\nexports.default = router;\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/routes.ts?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar 
   \******************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes.ts\");\nvar app = express();\napp.use(express.static('public'));\napp.use(routes_1.default);\nvar port = process.env.PORT || 3000;\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/server.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar routes_1 = __webpack_require__(/*! ./routes */ \"./src/server/routes.ts\");\nvar app = express();\napp.use(express.static(\"public\"));\napp.use(routes_1.default);\nvar port = process.env.PORT || 3000;\napp.listen(port, function () { return console.log(\"Server listening on port: \" + port); });\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/server.ts?");
 
 /***/ }),
 
