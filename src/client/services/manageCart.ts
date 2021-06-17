@@ -1,4 +1,5 @@
 import Product from '../types/Product';
+
 export const processCart = (cartList: any[], newItem: any, removing: boolean) => {
     let existInCart = false;
 
@@ -7,10 +8,15 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
         totalTax: 0,
     }
 
+    // Add the totals up based on changes to cart
+    // Change quantity of a product in the cart
+    // Remove the product completely if removing last one from cart
+
     const newList = cartList.reduce((accumulator, product, i) => {
         let { id, quantity, price, taxedPrice, tax } = product;
         product.idx = i;
         let noneInCart = false;
+
         if(id === newItem.id){
             if(!removing){
                 existInCart = true;
@@ -28,11 +34,11 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
         }
 
         if(!noneInCart){
-            // resp.total += price * quantity,
             resp.totalAfterTax += taxedPrice * quantity,
             resp.totalTax += tax * quantity,
             accumulator.push(product);
         }
+
         return accumulator;
     }, []);
 
@@ -56,9 +62,5 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
 }
 
 export const addtoCart = (cartList: Product[], item: Product) => processCart(cartList, item, false);
-
-export const removeFromCart = (cartList: Product[], item : Product) => {
-    return processCart(cartList, item, true)
-}
-
+export const removeFromCart = (cartList: Product[], item : Product) => processCart(cartList, item, true);
 export default addtoCart;

@@ -1,7 +1,5 @@
 import Product from '../types/Product';
 
-// Preprocess the tax values and add ids to the catalog data
-
 export const findTax = (price: number, percent: number) => {
     // Because we all love how JavaScript handles numbers
     // In reality I doubt I would leave so many comments here
@@ -31,6 +29,8 @@ export const checkIfSalesTaxExempt = (type: string) => {
 }
 
 export const processProducts = (data: any) => {
+    // Preprocess the tax values and add ids to the catalog data
+    // In real world wouldn't do it like this
     data.reduce((accumulator: Product[], product: Product, currentIndex: number) => {
         let newProduct = product;
         const { imported, price, type } = newProduct;
@@ -59,7 +59,6 @@ export const processProducts = (data: any) => {
     }, [])
 
     return data;
-
 }
 
 export default processProducts;

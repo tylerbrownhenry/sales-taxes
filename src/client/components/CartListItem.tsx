@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-// Set type of catalog item
 const CartListItem = (props: any) => {
   console.log(props);
   const {imported, name, price, type, taxedPrice, totalPrice, quantity, multiItemsPrice } = props.product;

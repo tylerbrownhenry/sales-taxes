@@ -12,9 +12,8 @@ const App = (props: AppProps) => {
 
 	const [cartList, updateCart] = useState([]);
 	const [cartResponse, updateCartResponse] = useState({
-        // total: 0,
-        totalAfterTax: '0.00',
-        totalTax: '0',
+        totalAfterTax: "0.00",
+        totalTax: "0",
     });
 
 	const addToCart = (product: Product) => {
