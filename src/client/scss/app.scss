@@ -2,4 +2,18 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+.card{
+    min-width: 25% !important; ///yesss
+}
+
+.price {
+    font-weight: 600;
+    color: #333333;
+    font-size: 24px;
+}
+
+.product-name {
+    min-height:50px;
+}
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
