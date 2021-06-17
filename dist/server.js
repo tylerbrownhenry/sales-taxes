@@ -16,7 +16,7 @@
   \******************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar router = express.Router();\nrouter.get('/api/addtoCart', function (req, res, next) {\n    console.log('Test');\n    res.json('receipt');\n});\nexports.default = router;\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/routes.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar router = express.Router();\nrouter.get('/api/getCartTotal', function (req, res, next) {\n    console.log('For timing\\'s sake decided against doing this as an api');\n    res.json('receipt');\n});\nexports.default = router;\n\n\n//# sourceURL=webpack://sales-taxes/./src/server/routes.ts?");
 
 /***/ }),
 

@@ -7,9 +7,7 @@ import Product from './types/Product';
 import { addtoCart, processCart, removeFromCart } from './services/manageCart';
 import processProducts from './services/processProduct';
 const catalog = processProducts(data);
-// Move to common
 
-/* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
 
 	const [cartList, updateCart] = useState([]);
@@ -50,7 +48,7 @@ const App = (props: AppProps) => {
 					)}
 
 					{cartList && cartList.length === 0 && 
-						<span>Cart is Empty</span>
+						<strong>Cart is Empty</strong>
 					}
 
 					</ul>

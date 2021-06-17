@@ -3,7 +3,6 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
     let existInCart = false;
 
     let resp = {
-        // total: 0,
         totalAfterTax: 0,
         totalTax: 0,
     }
@@ -38,13 +37,11 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
     }, []);
 
     if(!existInCart && !removing){
-        console.log('NOPE');
         let { quantity, price, taxedPrice, tax } = newItem;
         quantity = 1;
         newItem.quantity = quantity;
         newItem.idx = cartList.length + 1;
         newList.push(newItem);
-        // resp.total += price * quantity;
         resp.totalAfterTax += taxedPrice * quantity;
         resp.totalTax += tax * quantity;
     }
@@ -54,7 +51,7 @@ export const processCart = (cartList: any[], newItem: any, removing: boolean) =>
         totalAfterTax: resp.totalAfterTax.toFixed(2)
     }
 
-    return {response, newList };
+    return { response, newList };
 
 }
 
