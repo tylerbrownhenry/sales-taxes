@@ -11,7 +11,7 @@ This has only been ran on a 2021 Macbook Air.
 
 ```shell
 git clone https://github.com/tylerbrownhenry/sales-taxes.git
-cd sales-tax
+cd sales-taxes
 npm install
 npm run dev
 http://localhost:3000/#
