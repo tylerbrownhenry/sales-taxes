@@ -71,7 +71,7 @@ const data = [
         name: 'The White Album',
         type: 'music',
         imported: false,
-        price: 10.48,
+        price: 14.99,
     },
     {
         name: 'The Black Album',

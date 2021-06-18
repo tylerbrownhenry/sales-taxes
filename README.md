@@ -20,7 +20,7 @@ Then open http://localhost:3000/# to view the UI, you can click 'add to cart' to
 
 On the right side you can remove items from the cart one at a time by clicking on the 'X'
 
-Also, the catalog can be edited on the very bottom of the screen using the very ugle textarea import, just make sure to match the format, and to use valid json. Using unique ids
+Also, the catalog can be edited on the very bottom of the screen using the very ugle textarea import, just make sure to match the format, and to use valid json.
 
 ```
 [

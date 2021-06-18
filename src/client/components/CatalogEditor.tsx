@@ -3,9 +3,9 @@ import processProducts from "../services/processProduct";
 
 // This was mostly copied last minute from https://reactjs.org/docs/forms.html to include 
 // an editor for the catalog
-class CatalogEditor extends React.Component <any, { value: string }>{
+class CatalogEditor extends React.Component <any, { value: any }>{
     catalog: any;
-    value: string;
+    value: any;
     updateCatalog: any;
     updateCart: any;
     updateCartResponse: any;
