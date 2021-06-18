@@ -16,7 +16,35 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:3000/# to view the UI
+Then open http://localhost:3000/# to view the UI, you can click 'add to cart' to add an item to the cart, and see the list of items, and the total on the right side.
+
+On the right side you can remove items from the cart one at a time by clicking on the 'X'
+
+Also, the catalog can be edited on the very bottom of the screen using the very ugle textarea import, just make sure to match the format, and to use valid json. Using unique ids
+
+```
+[
+   {
+      "name":"Chocolate Bar",
+      "type":"food",
+      "imported":false,
+      "price":0.85
+   },
+   {
+      "name":"Book about imported Chocolates",
+      "type":"book",
+      "imported":true,
+      "price":10.0
+   },
+   {
+      "name":"Headache Medicine",
+      "type":"medical",
+      "imported":true,
+      "price":9.75
+   }
+]
+
+```
 
 ## Running Tests 
 ```shell

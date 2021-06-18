@@ -18,6 +18,10 @@ $theme-colors: (
   color: #fff;
 }
 
+.catalogEditor{
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   .col-12.floatRight {
     position: fixed;

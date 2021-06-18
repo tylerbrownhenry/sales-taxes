@@ -2,6 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import data from "./data/catalog";
 import Card from "./components/Card";
+import CatalogEditor from "./components/CatalogEditor";
 import CartListItem from "./components/CartListItem";
 import Product from "./types/Product";
 import { addtoCart, processCart, removeFromCart } from "./services/manageCart";
@@ -9,6 +10,7 @@ import processProducts from "./services/processProduct";
 const catalog = processProducts(data);
 
 const App = (props: AppProps) => {
+  const [catalogState, updateCatalog] = useState(catalog);
   const [cartList, updateCart] = useState([]);
   const [cartResponse, updateCartResponse] = useState({
     totalAfterTax: "0.00",
@@ -33,8 +35,8 @@ const App = (props: AppProps) => {
       <div className="row">
         <div className="col-12 col-lg-8">
           <ul className="card-group">
-            {catalog &&
-              catalog.map((product: Product, i: number) => (
+            {catalogState &&
+              catalogState.map((product: Product, i: number) => (
                 <Card
                   key={i}
                   product={product}
@@ -43,6 +45,7 @@ const App = (props: AppProps) => {
                 ></Card>
               ))}
           </ul>
+          <CatalogEditor updateCart={updateCart} updateCartResponse={updateCartResponse} updateCatalog={updateCatalog} catalog={catalogState}></CatalogEditor>
         </div>
         <div className="col-12 col-lg-4 floatRight">
           Cart
