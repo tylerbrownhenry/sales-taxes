@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
+    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
     "watch:build": "webpack -w",
     "watch:server": "nodemon dist/server.js",
     "dev": "npm-run-all --parallel watch:*",
