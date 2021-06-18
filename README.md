@@ -14,8 +14,9 @@ git clone https://github.com/tylerbrownhenry/sales-taxes.git
 cd sales-taxes
 npm install
 npm run dev
-http://localhost:3000/#
 ```
+
+Then open http://localhost:3000/# to view the UI
 
 ## Project structure
 
