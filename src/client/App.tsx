@@ -31,7 +31,7 @@ const App = (props: AppProps) => {
 
   return (
     <main className="container my-5">
-      <h1 className="text-primary text-center">Everyday Essentials!</h1>
+      <h1 className="text-primary text-center title">Everyday Essentials!</h1>
       <div className="row">
         <div className="col-12 col-lg-8">
           <ul className="card-group">
@@ -45,7 +45,6 @@ const App = (props: AppProps) => {
                 ></Card>
               ))}
           </ul>
-          <CatalogEditor updateCart={updateCart} updateCartResponse={updateCartResponse} updateCatalog={updateCatalog} catalog={catalogState}></CatalogEditor>
         </div>
         <div className="col-12 col-lg-4 floatRight">
           Cart
@@ -62,7 +61,7 @@ const App = (props: AppProps) => {
               ))}
 
             {cartList && cartList.length === 0 && (
-              <strong>Cart is Empty</strong>
+              <div className="alert alert-primary">Cart is Empty</div>
             )}
           </ul>
           Cart Total
@@ -74,6 +73,9 @@ const App = (props: AppProps) => {
               <label>Tax</label> ${cartResponse.totalTax}
             </li>
           </ul>
+        </div>
+        <div className="col-12 col-lg-8">
+          <CatalogEditor updateCart={updateCart} updateCartResponse={updateCartResponse} updateCatalog={updateCatalog} catalog={catalogState}></CatalogEditor>
         </div>
       </div>
     </main>

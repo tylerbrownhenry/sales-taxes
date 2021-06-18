@@ -22,12 +22,22 @@ $theme-colors: (
   width: 100%;
 }
 
+.title {
+  height: 100px;
+}
+
+.cartListName {
+  text-align: left;
+  width: -webkit-fill-available; // Cross
+  padding: 0px 12px;
+}
+
 @media (min-width: 992px) {
   .col-12.floatRight {
     position: fixed;
     right: 0;
     height: 100%;
-    top: 80px;
+    top: 150px;
     .list-group {
       max-height: 50%;
       overflow: scroll;

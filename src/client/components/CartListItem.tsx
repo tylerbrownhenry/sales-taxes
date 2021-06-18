@@ -18,7 +18,7 @@ const CartListItem = (props: any) => {
       className="list-group-item d-flex justify-content-between align-items-center"
       key="{idx}"
     >
-      <label>{name}</label>
+
       {quantity === 1 && (
         <span className="totalPrice badge bg-primary rounded-pill">
           ${taxedPrice}
@@ -29,6 +29,7 @@ const CartListItem = (props: any) => {
           {quantity} @ ${taxedPrice}
         </span>
       )}
+      <span className="cartListName">{name}</span>
       <span
         onClick={() => removeFromCart(props.product, idx)}
         className="removeButton badge bg-danger"

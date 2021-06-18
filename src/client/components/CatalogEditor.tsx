@@ -47,11 +47,11 @@ class CatalogEditor extends React.Component <any, { value: string }>{
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Catalog Editor:
-            <textarea className="catalogEditor" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+            <div className="form-group">
+                <label>Catalog Editor:</label>
+                <textarea rows="10" className="form-control catalogEditor" value={this.state.value} onChange={this.handleChange} />
+                <input className="btn btn-primary mb-2" type="submit" value="Submit" />
+          </div>
         </form>
       );
     }
